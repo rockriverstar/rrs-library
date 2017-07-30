@@ -1,0 +1,22 @@
+@import "compass/css3/animation";
+@import "compass/css3/transform";
+@import "compass/css3/opacity";
+
+.fadeindiv-hide {
+    visibility: hidden;
+}
+.fadeindiv-show {
+	visibility: visible;
+    @include animation(fadeindiv 1s);
+}
+
+@include keyframes(fadeindiv) {
+  0% {
+  	@include transform( translate(0.0px, 50.0px) );
+ 	@include opacity(0);
+  }
+  100% {
+    @include transform( translate(0.0px, 0.0px) );
+ 	@include opacity(1);
+  }  
+}
