@@ -1,0 +1,3 @@
+# When cache_form table grows large, use this command
+
+DELETE FROM cache_form WHERE expire < now();
