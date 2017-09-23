@@ -1,0 +1,14 @@
+# Show tables, rows and size, order by size
+
+SELECT table_name AS `Table`, round(((data_length + index_length) / 1024 / 1024), 2) `Size in MB`, table_rows as `Rows`  
+FROM information_schema.TABLES 
+WHERE table_schema= '<DATABASE>'
+ORDER BY (data_length + index_length) DESC LIMIT 25;
+
+
+# Show tables, rows and size, order by rows
+
+SELECT table_name AS `Table`, round(((data_length + index_length) / 1024 / 1024), 2) `Size in MB`, table_rows as `Rows`  
+FROM information_schema.TABLES 
+WHERE table_schema= '<DATABASE>'
+ORDER BY table_rows DESC LIMIT 25;
