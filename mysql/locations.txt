@@ -1,0 +1,28 @@
+#
+# find entries in location table without matching entities
+# need to JOIN with every field of type "location" see /admin/reports/fields
+
+select count(*) from location loc
+
+LEFT JOIN field_data_field_location fld 
+ON loc.lid = fld.field_location_lid
+
+LEFT JOIN field_data_field_event_location fld2 
+ON loc.lid = fld2.field_event_location_lid
+
+LEFT JOIN field_data_field_address fld3 
+ON loc.lid = fld3.field_address_lid
+
+WHERE ((fld.entity_id IS NULL) AND (fld2.entity_id IS NULL) AND (fld3.entity_id IS NULL)); 
+
+#
+# ... and remove them
+
+DELETE loc from location loc
+LEFT JOIN field_data_field_location fld 
+ON loc.lid = fld.field_location_lid
+LEFT JOIN field_data_field_event_location fld2 
+ON loc.lid = fld2.field_event_location_lid
+LEFT JOIN field_data_field_address fld3 
+ON loc.lid = fld3.field_address_lid
+WHERE ((fld.entity_id IS NULL) AND (fld2.entity_id IS NULL) AND (fld3.entity_id IS NULL)); 
