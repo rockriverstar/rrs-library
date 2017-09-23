@@ -11,3 +11,17 @@ group by field_name order by count(*) desc;
 select item.field_name,count(*) from field_collection_item_revision rev 
 LEFT JOIN field_collection_item item  ON rev.item_id = item.item_id 
 WHERE item.item_id IS NOT NULL group by item.field_name order by count(*) desc;
+
+#
+# display count of field collection item revisions without matching item (ie orphaned)
+
+select count(*) from field_collection_item_revision rev  
+LEFT JOIN field_collection_item item ON rev.item_id = item.item_id 
+WHERE item.item_id IS NULL
+
+#
+# ...and delete them
+
+delete rev from field_collection_item_revision rev  
+LEFT JOIN field_collection_item item ON rev.item_id = item.item_id 
+WHERE item.item_id IS NULL
