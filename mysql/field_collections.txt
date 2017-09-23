@@ -1,0 +1,13 @@
+#
+# display count of number of field collection items by field
+
+select field_name,count(*) from field_collection_item 
+group by field_name order by count(*) desc;
+
+
+#
+# display count of number of field collection item revisions by field
+
+select item.field_name,count(*) from field_collection_item_revision rev 
+LEFT JOIN field_collection_item item  ON rev.item_id = item.item_id 
+WHERE item.item_id IS NOT NULL group by item.field_name order by count(*) desc;
