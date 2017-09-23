@@ -1,0 +1,2 @@
+select entity_type, bundle, count(*) from field_revision_body 
+GROUP BY entity_type, bundle order by count(*) desc ;
