@@ -1,0 +1,61 @@
+# RRS .gitignore file
+# Because ignorance is bliss
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings.local.php
+
+# Ignore paths that contain user-generated content.
+/sites/*/files
+/sites/*/private
+/files/*
+/cache
+
+# ** Only works in OSs that support newer versions of fnmatch (Bash 4+)
+/sites/default/**/files
+/sites/default/**/private
+
+# pantheon
+pantheon.upstream.yml
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon
+
+Thumbs.db
+._*
+
+# Editr generated files #
+######################
+*.un~
+*#
+*~
+
+# SASS/Compass #
+##########
+.sass-cache
+compass.pid
+compass.log
+
+# C9
+##########
+php.ini
