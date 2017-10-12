@@ -1,0 +1,42 @@
+/* 
+ * datatables module / dataTables jQuery plugin 
+ * https://www.drupal.org/project/datatables
+ */
+
+div.dataTables_wrapper {
+  div#datatable-1_filter input {
+    border: 1px solid #ccc;
+    min-width: 300px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    padding: 2px 4px;
+  }
+
+  table.dataTable {
+    th {
+      background-color: #fff;
+    }
+    tr.odd td.sorting_1, 
+    tr.even td.sorting_1 {
+        background-color: inherit;
+    }
+    
+    tr.odd {
+        background: #f8f8f8;
+    }
+    
+    tr.even {
+        background: #fCfCfC;
+    }
+    
+    tr:hover {
+        background: #f0f0f0;
+    }
+  
+    th.sorting_asc, 
+    th.sorting_desc {
+      background-color: #f0f0f0;
+    }
+  
+  }
+}
