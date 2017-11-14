@@ -1,0 +1,12 @@
+#
+# Compare the modules enabled on two sites (using drush aliases)
+#
+
+
+
+# Shows version difference
+diff -b -s --suppress-common-lines <(drush @self pm-list --status=enabled ) <(drush @staging pm-list --status=enabled)
+
+
+# Ignores version differences
+diff -b -s --suppress-common-lines <(drush @self pm-list --status=enabled --fields=package,name) <(drush @staging pm-list --status=enabled --fields=package,name)                            
