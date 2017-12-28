@@ -1,0 +1,15 @@
+// https://www.purepresencecreative.com/blog/how-to-make-iframes-responsive-youtube-embeds-google-maps
+
+.iframe-wrapper {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%; // 16 x 9
+  & > iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
