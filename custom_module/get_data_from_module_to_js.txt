@@ -1,0 +1,19 @@
+PHP:
+
+drupal_add_js(array('my_module_name' => array('var_1' => 'val_1',
+                                              'var_2' => $some_value)
+                                              ), 'setting');
+
+
+JS:
+
+var myData = Drupal.settings.my_module_name;
+var myVar = Drupal.settings.my_module_name.var_1;
+
+if (typeof myData !== "undefined") {
+  console.log("undefined!");
+} else {
+  console.log(myData);
+}  
+
+
