@@ -1,0 +1,2 @@
+$ wget -mpck --adjust-extension --user-agent="wget" -e robots=off  WWW.WEBSITE.COM
+
