@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Set the "placeholder" value of a text field in a form
+ * Set the "HTML5 placeholder" value of a text field in a form
  * 'case' line holds ID of the <form>
  * $form[''] holds the NAME from the <input> element
  */
